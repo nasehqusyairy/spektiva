@@ -1,0 +1,42 @@
+[
+    {
+        "alternative": "Penyediaan Fasilitas Pelayanan Kesehatan",
+        "c1": 5,
+        "c2": 4,
+        "c3": 3,
+        "c4": 4,
+        "c5": 5
+    },
+    {
+        "alternative": "Penyediaan Layanan Kesehatan Rujukan",
+        "c1": 3,
+        "c2": 2,
+        "c3": 4,
+        "c4": 3,
+        "c5": 4
+    },
+    {
+        "alternative": "Penyediaan Jasa Penunjang Urusan Pemerintahan",
+        "c1": 4,
+        "c2": 3,
+        "c3": 2,
+        "c4": 2,
+        "c5": 3
+    },
+    {
+        "alternative": "Pengembangan UKBM",
+        "c1": 5,
+        "c2": 4,
+        "c3": 4,
+        "c4": 5,
+        "c5": 4
+    },
+    {
+        "alternative": "Perencanaan SDM Kesehatan",
+        "c1": 4,
+        "c2": 3,
+        "c3": 2,
+        "c4": 4,
+        "c5": 4
+    }
+]

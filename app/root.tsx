@@ -23,6 +23,12 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+export function meta({ }: Route.MetaArgs) {
+  return [
+    { title: "SPEKTIVA" },
+  ];
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -32,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="">
         {children}
         <ScrollRestoration />
         <Scripts />

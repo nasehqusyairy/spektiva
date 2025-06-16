@@ -1,0 +1,22 @@
+[
+    {
+        "code": "a1",
+        "name": "Penyediaan Fasilitas Pelayanan Kesehatan"
+    },
+    {
+        "code": "a2",
+        "name": "Penyediaan Layanan Kesehatan Rujukan"
+    },
+    {
+        "code": "a3",
+        "name": "Penyediaan Jasa Penunjang Urusan Pemerintahan"
+    },
+    {
+        "code": "a4",
+        "name": "Pengembangan UKBM"
+    },
+    {
+        "code": "a5",
+        "name": "Perencanaan SDM Kesehatan"
+    }
+]
