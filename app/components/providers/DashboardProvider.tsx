@@ -6,6 +6,7 @@ interface DashboardContextType {
     openDialog: () => void;
     closeDialog: () => void;
     decisions: DecisionItem[];
+    alternatives: { code: string, name: string }[];
 }
 
 const DashboardContext = createContext<DashboardContextType | null>(null);
@@ -19,9 +20,10 @@ export function useDashboard() {
 interface dashboardProviderProps {
     children: ReactNode;
     decisions: DecisionItem[];
+    alternatives: { code: string, name: string }[];
 }
 
-export function DashboardProvider({ children, decisions }: dashboardProviderProps) {
+export function DashboardProvider({ children, decisions, alternatives }: dashboardProviderProps) {
     const [open, setOpen] = useState(false);
 
 
@@ -38,7 +40,8 @@ export function DashboardProvider({ children, decisions }: dashboardProviderProp
             open,
             openDialog,
             closeDialog,
-            decisions
+            decisions,
+            alternatives
         }}>
             {children}
         </DashboardContext.Provider>

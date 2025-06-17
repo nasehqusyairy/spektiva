@@ -20,3 +20,9 @@ export async function fetchDecisions(): Promise<DecisionItem[]> {
     const { data } = await axios.get("/api/decisions.json");
     return data as DecisionItem[];
 }
+
+// Simulasikan pemanggilan data alternatives
+export async function fetchAlternatives(): Promise<{ code: string, name: string }[]> {
+    const { data } = await axios.get(`/api/alternatives.json`);
+    return data;
+}

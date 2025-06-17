@@ -15,11 +15,6 @@
         "value": 5
     },
     {
-        "from": "c1",
-        "to": "c5",
-        "value": 3
-    },
-    {
         "from": "c2",
         "to": "c3",
         "value": 3
@@ -30,23 +25,8 @@
         "value": 4
     },
     {
-        "from": "c2",
-        "to": "c5",
-        "value": 2
-    },
-    {
         "from": "c3",
         "to": "c4",
         "value": 3
-    },
-    {
-        "from": "c3",
-        "to": "c5",
-        "value": 2
-    },
-    {
-        "from": "c4",
-        "to": "c5",
-        "value": 1
     }
 ]

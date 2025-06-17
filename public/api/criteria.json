@@ -6,22 +6,17 @@
     },
     {
         "code": "c2",
-        "name": "Ketepatan Waktu",
+        "name": "Keberhasilan",
         "type": "benefit"
     },
     {
         "code": "c3",
-        "name": "Deviasi",
-        "type": "cost"
+        "name": "Ketepatan Target",
+        "type": "benefit"
     },
     {
         "code": "c4",
-        "name": "Frekuensi Revisi",
-        "type": "cost"
-    },
-    {
-        "code": "c5",
-        "name": "Rating Keberhasilan",
+        "name": "Ketepatan Waktu",
         "type": "benefit"
     }
 ]

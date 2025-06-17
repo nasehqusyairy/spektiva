@@ -23,9 +23,9 @@ export default function TopsisResultTable() {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead><Badge>Nilai Preferensi</Badge></TableHead>
-                            <TableHead className="text-center">Si+</TableHead>
-                            <TableHead className="text-center">Si-</TableHead>
+                            <TableHead><Badge>Jarak Solusi Ideal</Badge></TableHead>
+                            <TableHead className="text-center">(+)</TableHead>
+                            <TableHead className="text-center">(-)</TableHead>
                             <TableHead className="text-center">Preferensi</TableHead>
                             <TableHead className="text-center">Persentase</TableHead>
                         </TableRow>
@@ -39,7 +39,7 @@ export default function TopsisResultTable() {
                                 <TableCell className="text-center">{item.dPositive}</TableCell>
                                 <TableCell className="text-center">{item.dNegative}</TableCell>
                                 <TableCell className="text-center">{item.preference}</TableCell>
-                                <TableCell className={"text-center " + (Number(item.percentage) < 35 ? 'text-red-500' : '')}>{item.percentage}%</TableCell>
+                                <TableCell className={"text-center " + (Number(item.percentage) < (100 / 3) ? 'text-red-500' : '')}>{item.percentage}%</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

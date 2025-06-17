@@ -141,11 +141,11 @@ const data = {
       url: "/criterions",
       icon: ListTodo,
     },
-    {
-      name: "Skala Penilaian",
-      url: "/scales",
-      icon: Scale,
-    },
+    // {
+    //   name: "Skala Penilaian",
+    //   url: "/scales",
+    //   icon: Scale,
+    // },
   ],
 }
 

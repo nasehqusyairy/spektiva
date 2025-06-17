@@ -1,42 +1,72 @@
 [
     {
-        "alternative": "Penyediaan Fasilitas Pelayanan Kesehatan",
-        "c1": 5,
-        "c2": 4,
-        "c3": 3,
-        "c4": 4,
-        "c5": 5
+        "alternative": "Perencanaan, Penganggaran, dan Evaluasi Kinerja Perangkat Daerah",
+        "c1": 73,
+        "c2": 80,
+        "c3": 90,
+        "c4": 85
     },
     {
-        "alternative": "Penyediaan Layanan Kesehatan Rujukan",
-        "c1": 3,
-        "c2": 2,
-        "c3": 4,
-        "c4": 3,
-        "c5": 4
+        "alternative": "Penyediaan Jasa Penunjang Urusan Pemerintahan Daerah",
+        "c1": 55,
+        "c2": 65,
+        "c3": 75,
+        "c4": 70
     },
     {
-        "alternative": "Penyediaan Jasa Penunjang Urusan Pemerintahan",
-        "c1": 4,
-        "c2": 3,
-        "c3": 2,
-        "c4": 2,
-        "c5": 3
+        "alternative": "Pengelolaan Pendidikan Non Formal/Kesetaraan",
+        "c1": 52,
+        "c2": 60,
+        "c3": 65,
+        "c4": 60
     },
     {
-        "alternative": "Pengembangan UKBM",
-        "c1": 5,
-        "c2": 4,
-        "c3": 4,
-        "c4": 5,
-        "c5": 4
+        "alternative": "Pemerataan Kuantitas dan Kualitas Pendidik dan Tenaga Kependidikan",
+        "c1": 43,
+        "c2": 55,
+        "c3": 55,
+        "c4": 60
     },
     {
-        "alternative": "Perencanaan SDM Kesehatan",
-        "c1": 3,
-        "c2": 2,
-        "c3": 2,
-        "c4": 1,
-        "c5": 4
+        "alternative": "Administrasi Umum Perangkat Daerah",
+        "c1": 32,
+        "c2": 50,
+        "c3": 60,
+        "c4": 55
+    },
+    {
+        "alternative": "Pengelolaan Pendidikan Sekolah Dasar",
+        "c1": 23,
+        "c2": 45,
+        "c3": 50,
+        "c4": 45
+    },
+    {
+        "alternative": "Pengelolaan Pendidikan Anak Usia Dini (PAUD)",
+        "c1": 23,
+        "c2": 40,
+        "c3": 40,
+        "c4": 50
+    },
+    {
+        "alternative": "Pengelolaan Pendidikan Sekolah Menengah Pertama",
+        "c1": 15,
+        "c2": 35,
+        "c3": 35,
+        "c4": 45
+    },
+    {
+        "alternative": "Pengadaan Barang Milik Daerah Penunjang Urusan Pemerintah Daerah",
+        "c1": 8,
+        "c2": 30,
+        "c3": 30,
+        "c4": 35
+    },
+    {
+        "alternative": "Administrasi Keuangan Perangkat Daerah",
+        "c1": 0,
+        "c2": 15,
+        "c3": 20,
+        "c4": 25
     }
 ]

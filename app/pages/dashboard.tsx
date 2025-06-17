@@ -9,6 +9,8 @@ import NormalizedDecisions from "~/components/decision/normalized";
 import WeightedDecisions from "~/components/decision/weighted";
 import IdealSolutions from "~/components/decision/ideals";
 import TopsisResultTable from "~/components/decision/result";
+import DecisionGenerator from "~/components/decision/generator";
+import { useState } from "react";
 
 const records = [
   {
@@ -22,8 +24,8 @@ const records = [
 ]
 
 export default function Dashboard() {
-
-  const { openDialog } = useDashboard()
+  const { closeDialog, open, openDialog } = useDashboard();
+  const [matrixReady, setMatrixReady] = useState(false);
 
   return (
     <>
@@ -51,6 +53,14 @@ export default function Dashboard() {
           </TabsContent>
         </Tabs>
       </div>
+      <DecisionGenerator
+        open={open}
+        onClose={() => closeDialog()}
+        onComplete={() => {
+          closeDialog();
+          setMatrixReady(true);
+        }}
+      />
     </>
   )
 }

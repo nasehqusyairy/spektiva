@@ -3,12 +3,10 @@ import { Card, CardContent } from "~/components/ui/card";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table";
 import { TabsContent } from "~/components/ui/tabs";
 import { useDashboard } from "~/components/providers/DashboardProvider";
-import DecisionGenerator from "./generator";
 import type { DecisionItem } from "~/models/decision";
 import { useTopsis } from "~/hooks/topsis";
 
 export default function Decision() {
-    const [matrixReady, setMatrixReady] = useState(false);
     const { closeDialog, open, decisions } = useDashboard();
     const { criteria } = useTopsis(decisions);
 
@@ -32,7 +30,7 @@ export default function Decision() {
                                         <div className="text-wrap py-2 w-[200px]">{item.alternative}</div>
                                     </TableHead>
                                     {criteria.map((c) => (
-                                        <TableCell key={c.code}>{item[c.code]}</TableCell>
+                                        <TableCell key={c.code}>{item[c.code]}%</TableCell>
                                     ))}
                                 </TableRow>
                             ))}
@@ -40,14 +38,6 @@ export default function Decision() {
                     </Table>
                 </CardContent>
             </Card>
-            <DecisionGenerator
-                open={open}
-                onClose={() => closeDialog()}
-                onComplete={() => {
-                    closeDialog();
-                    setMatrixReady(true);
-                }}
-            />
         </TabsContent>
     )
 }

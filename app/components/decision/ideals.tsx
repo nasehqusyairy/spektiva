@@ -16,9 +16,9 @@ export default function IdealSolutions() {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead><Badge>Nilai Ideal</Badge></TableHead>
-                            <TableHead className="text-center">A+</TableHead>
-                            <TableHead className="text-center">A-</TableHead>
+                            <TableHead><Badge>Nilai Solusi Ideal</Badge></TableHead>
+                            <TableHead className="text-center">(+)</TableHead>
+                            <TableHead className="text-center">(-)</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>

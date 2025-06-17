@@ -1,26 +1,42 @@
 [
     {
-        "code": "a1",
-        "name": "Penyediaan Fasilitas Pelayanan Kesehatan"
+        "code": "1.01.01.2.01",
+        "name": "Perencanaan, Penganggaran, dan Evaluasi Kinerja Perangkat Daerah"
     },
     {
-        "code": "a2",
-        "name": "Penyediaan Layanan Kesehatan Rujukan"
+        "code": "1.01.01.2.08",
+        "name": "Penyediaan Jasa Penunjang Urusan Pemerintahan Daerah"
     },
     {
-        "code": "a3",
-        "name": "Penyediaan Jasa Penunjang Urusan Pemerintahan"
+        "code": "1.01.02.2.04",
+        "name": "Pengelolaan Pendidikan Non Formal/Kesetaraan"
     },
     {
-        "code": "a4",
-        "name": "Pengembangan UKBM"
+        "code": "1.01.04.2.01",
+        "name": "Pemerataan Kuantitas dan Kualitas Pendidik dan Tenaga Kependidikan"
     },
     {
-        "code": "a5",
-        "name": "Perencanaan SDM Kesehatan"
+        "code": "1.01.01.2.06",
+        "name": "Administrasi Umum Perangkat Daerah"
     },
     {
-        "code": "a6",
-        "name": "Pengembangan Sistem Informasi Kesehatan"
+        "code": "1.01.02.2.01",
+        "name": "Pengelolaan Pendidikan Sekolah Dasar"
+    },
+    {
+        "code": "1.01.02.2.03",
+        "name": "Pengelolaan Pendidikan Anak Usia Dini (PAUD)"
+    },
+    {
+        "code": "1.01.02.2.02",
+        "name": "Pengelolaan Pendidikan Sekolah Menengah Pertama"
+    },
+    {
+        "code": "1.01.01.2.07",
+        "name": "Pengadaan Barang Milik Daerah Penunjang Urusan Pemerintah Daerah"
+    },
+    {
+        "code": "1.01.01.2.03",
+        "name": "Administrasi Keuangan Perangkat Daerah"
     }
 ]
