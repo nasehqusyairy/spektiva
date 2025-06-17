@@ -31,12 +31,12 @@ const data = {
   },
   teams: [
     {
-      name: "Dinas Kesehatan",
-      logo: Syringe,
-    },
-    {
       name: "Dinas Pendidikan",
       logo: GraduationCap,
+    },
+    {
+      name: "Dinas Kesehatan",
+      logo: Syringe,
     },
     {
       name: "Dinas Perhubungan",
