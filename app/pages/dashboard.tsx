@@ -1,5 +1,4 @@
 import Header from "~/components/Header";
-import type { Route } from "./+types/dashboard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import Decision from "~/components/decision/decisions";
 import Combobox from "~/components/Combobox";
@@ -37,7 +36,7 @@ export default function Dashboard() {
               <Combobox records={records} name="tanggal" />
             </div>
             <TabsList>
-              <TabsTrigger value="decision">Keputusan</TabsTrigger>
+              <TabsTrigger value="decision">Nilai</TabsTrigger>
               <TabsTrigger value="normalized">Ternormalisasi</TabsTrigger>
               <TabsTrigger value="weighted">Terbobot</TabsTrigger>
               <TabsTrigger value="results">Hasil</TabsTrigger>
