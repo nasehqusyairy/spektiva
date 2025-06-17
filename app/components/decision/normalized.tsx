@@ -1,14 +1,13 @@
 import { Card, CardContent } from "~/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table";
 import { TabsContent } from "../ui/tabs";
-import criteria from "~/data/criteria.json";
 import { useTopsis } from "~/hooks/topsis";
 import { useDashboard } from "../providers/DashboardProvider";
 
 export default function NormalizedDecisions() {
 
     const { decisions } = useDashboard();
-    const { normalized } = useTopsis(decisions);
+    const { normalized, criteria } = useTopsis(decisions);
 
     return (
         <TabsContent value="normalized">

@@ -18,5 +18,9 @@
     {
         "code": "a5",
         "name": "Perencanaan SDM Kesehatan"
+    },
+    {
+        "code": "a6",
+        "name": "Pengembangan Sistem Informasi Kesehatan"
     }
 ]

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "~/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table";
-import criteria from "~/data/criteria.json";
+import type { CriteriaItem } from "~/models/criteria";
 
 // Helper skala linguistik
 type LinguisticScale = { score: number; label: string; description: string; };
@@ -26,7 +26,7 @@ function getLinguisticScale(type: "benefit" | "cost"): LinguisticScale[] {
 }
 
 // Komponen utama
-export default function CriteriaSummary() {
+export default function CriteriaSummary({ criteria }: { criteria: CriteriaItem[] }) {
     return (
         <Card>
             <CardContent>
