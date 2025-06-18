@@ -3,7 +3,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~
 import { Card, CardContent } from "~/components/ui/card";
 import { TabsContent } from "../ui/tabs";
 
-export default function ColumnSumTable({ criteria, columnSum = [] }: {
+export default function ColumnSumPairwise({ criteria, columnSum = [] }: {
     criteria: CriteriaItem[],
     columnSum?: TFN[]
 }) {
