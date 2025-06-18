@@ -38,8 +38,8 @@ const PairwiseDialog: React.FC<PairwiseDialogProps> = ({ open, onClose, onSave, 
                         onValueChange={(val) => setValue(parseInt(val))}
                         className="space-y-2"
                     >
-                        {/* {[3, 5, 7, 9].map((num) => ( */}
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                        {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => ( */}
+                        {[1, 3, 5, 7, 9].map((num) => (
                             <div key={num} className="flex items-center space-x-2">
                                 <RadioGroupItem value={num.toString()} id={`radio-${num}`} />
                                 <Label htmlFor={`radio-${num}`}>
@@ -65,8 +65,8 @@ const PairwiseDialog: React.FC<PairwiseDialogProps> = ({ open, onClose, onSave, 
 function getSaatyLabel(value: number): string {
     switch (value) {
         case 1: return "Sama penting";
-        case 2: return "Sedikit lebih penting";
-        case 3: return "Agak lebih penting";
+        case 2: return "Agak Sedikit lebih penting";
+        case 3: return "Sedikit lebih penting";
         case 4: return "Cukup lebih penting";
         case 5: return "Lebih penting";
         case 6: return "Lumayan jauh lebih penting";
