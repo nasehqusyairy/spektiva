@@ -39,7 +39,7 @@ export default function Combobox({ records, onChange, name }: ComboboxProps) {
                     className="w-[200px] justify-between"
                 >
                     {value
-                        ? records.find((item) => item.value === value)?.label
+                        ? records.find((item) => item.label === value)?.label
                         : `Pilih ${name}`}
                     <ChevronsUpDown className="opacity-50" />
                 </Button>
@@ -53,7 +53,7 @@ export default function Combobox({ records, onChange, name }: ComboboxProps) {
                             {records.map((item) => (
                                 <CommandItem
                                     key={item.value}
-                                    value={item.value}
+                                    value={item.label}
                                     onSelect={(currentValue) => {
                                         setValue(currentValue === value ? "" : currentValue)
                                         setOpen(false)
