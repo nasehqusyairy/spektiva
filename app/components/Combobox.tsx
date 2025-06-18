@@ -27,7 +27,7 @@ type ComboboxProps = {
 
 export default function Combobox({ records, onChange, name }: ComboboxProps) {
     const [open, setOpen] = React.useState(false)
-    const [value, setValue] = React.useState(records[0]?.value || "")
+    const [value, setValue] = React.useState(records[0]?.label || "")
 
     return (
         <Popover open={open} onOpenChange={setOpen}>
