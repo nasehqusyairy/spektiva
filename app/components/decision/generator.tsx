@@ -62,7 +62,7 @@ export default function DecisionGenerator({ open, onClose, onComplete }: Decisio
 
     return (
         <AlertDialog open={open} onOpenChange={onClose}>
-            <AlertDialogContent className="max-w-xl max-h-[80vh] overflow-hidden">
+            <AlertDialogContent className="w-11/12 max-w-xl max-h-[80vh] overflow-hidden">
                 <AlertDialogHeader>
                     <AlertDialogTitle>Penyusunan Matriks Keputusan</AlertDialogTitle>
                 </AlertDialogHeader>
