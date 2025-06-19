@@ -16,12 +16,12 @@ export default function Criterions() {
                 <Tabs defaultValue="pairwise">
                     <TabsList>
                         <TabsTrigger value="pairwise">Komparasi</TabsTrigger>
-                        <TabsTrigger value="sumcolumn"><Sigma /> Kolom</TabsTrigger>
+                        {/* <TabsTrigger value="sumcolumn"><Sigma /> Kolom</TabsTrigger> */}
                         <TabsTrigger value="normalized">Normalisasi</TabsTrigger>
                         <TabsTrigger value="defuzzyfied">Hasil</TabsTrigger>
                     </TabsList>
                     <Pairwise criteria={criteria} />
-                    <ColumnSumPairwise criteria={criteria} columnSum={columnSum} />
+                    {/* <ColumnSumPairwise criteria={criteria} columnSum={columnSum} /> */}
                     <NormalizedPairwise criteria={criteria} syntheticExtent={syntheticExtent} />
                     <DefuzzifiedPairwise criteria={criteria} defuzzified={defuzzified} />
                 </Tabs>
