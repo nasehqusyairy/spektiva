@@ -19,13 +19,15 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarMenuButton,
   SidebarRail,
 } from "~/components/ui/sidebar"
+import { NavUser } from "./nav-user"
 
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
+    name: "John Doe",
     email: "m@example.com",
     avatar: "https://picsum.photos/200",
   },
@@ -153,15 +155,26 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        {/* <TeamSwitcher teams={data.teams} /> */}
+        <SidebarMenuButton
+          size="lg"
+          className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+        >
+          <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+            <GraduationCap className="size-4" />
+          </div>
+          <div className="grid flex-1 text-left text-sm leading-tight">
+            <span className="truncate font-medium">Dinas Pendidikan</span>
+          </div>
+        </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
         {/* <NavMain items={data.navMain} /> */}
         <NavProjects projects={data.projects} />
       </SidebarContent>
-      {/* <SidebarFooter>
+      <SidebarFooter>
         <NavUser user={data.user} />
-      </SidebarFooter> */}
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )
