@@ -30,59 +30,38 @@ export function buildFullTFNMatrix(criteria: CriteriaItem[], pairwiseInput: Pair
 
     return matrix as TFN[][];
 }
-
-export function calculateColumnSum(matrix: TFN[][]): TFN[] {
-    const size = matrix.length;
-    const columnSum: TFN[] = Array.from({ length: size }, () => [0, 0, 0]);
-
-    for (let j = 0; j < size; j++) {
-        for (let i = 0; i < size; i++) {
-            columnSum[j][0] += matrix[i][j][0];
-            columnSum[j][1] += matrix[i][j][1];
-            columnSum[j][2] += matrix[i][j][2];
-        }
-
-        columnSum[j][0] = +columnSum[j][0].toFixed(4);
-        columnSum[j][1] = +columnSum[j][1].toFixed(4);
-        columnSum[j][2] = +columnSum[j][2].toFixed(4);
-    }
-
-    return columnSum;
-}
-
-export function calculateSyntheticExtent(matrix: TFN[][], columnSum: TFN[]): TFN[] {
-    const size = matrix.length;
-
-    const rowSum: TFN[] = matrix.map(row => row.reduce(
-        (acc, curr) => [
-            acc[0] + curr[0],
-            acc[1] + curr[1],
-            acc[2] + curr[2]
-        ], [0, 0, 0] as TFN
-    ));
-
-    const syntheticExtent: TFN[] = rowSum.map(sum => {
-        return [
-            +(sum[0] / columnSum.reduce((acc, val) => acc + val[2], 0)).toFixed(4),
-            +(sum[1] / columnSum.reduce((acc, val) => acc + val[1], 0)).toFixed(4),
-            +(sum[2] / columnSum.reduce((acc, val) => acc + val[0], 0)).toFixed(4)
-        ];
+export function geometricMeanRow(matrix: TFN[][]): TFN[] {
+    const n = matrix.length;
+    return matrix.map(row => {
+        const prod: TFN = row.reduce(
+            (acc, [l, m, u]) => [acc[0] * l, acc[1] * m, acc[2] * u],
+            [1, 1, 1] as TFN
+        );
+        const invN = 1 / n;
+        return [prod[0] ** invN, prod[1] ** invN, prod[2] ** invN];
     });
-
-    return syntheticExtent;
 }
 
-export function defuzzify(syntheticExtent: TFN[]): { defuzz: number, weight: number }[] {
-    const defuzzified = syntheticExtent.map(tfn => {
-        const d = (tfn[0] + tfn[1] + tfn[2]) / 3;
-        return +d.toFixed(4);
-    });
-
-    const total = defuzzified.reduce((acc, val) => acc + val, 0);
-
-    return defuzzified.map(val => ({
-        defuzz: val,
-        weight: +(val / total).toFixed(4)
-    }));
+export function normalizeBuckley(r: TFN[]): TFN[] {
+    const sumU = r.reduce((s, v) => s + v[2], 0);
+    const sumM = r.reduce((s, v) => s + v[1], 0);
+    const sumL = r.reduce((s, v) => s + v[0], 0);
+    return r.map(([l, m, u]) => [
+        +(l / sumU).toFixed(4),
+        +(m / sumM).toFixed(4),
+        +(u / sumL).toFixed(4)
+    ] as TFN);
 }
 
+export function defuzzifyNormalize(tfn: TFN[]): { defuzz: number; weight: number }[] {
+    const def = tfn.map(([l, m, u]) => +((l + m + u) / 3).toFixed(4));
+    const total = def.reduce((s, v) => s + v, 0);
+    return def.map(d => ({ defuzz: d, weight: +(d / total).toFixed(4) }));
+}
+
+export function buckleyFuzzyAHP(matrix: TFN[][]) {
+    const r = geometricMeanRow(matrix);     // 1. hitung geometric mean per baris
+    const wFuzzy = normalizeBuckley(r);     // 2. normalisasi fuzzy
+    const result = defuzzifyNormalize(wFuzzy); // 3. defuzzifikasi & normalisasi crisp
+    return result;
+}

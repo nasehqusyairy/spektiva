@@ -3,9 +3,9 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~
 import { Card, CardContent } from "~/components/ui/card";
 import { TabsContent } from "../ui/tabs";
 
-export default function ColumnSumPairwise({ criteria, columnSum = [] }: {
+export default function GMean({ criteria, geometricMean = [] }: {
     criteria: CriteriaItem[],
-    columnSum?: TFN[]
+    geometricMean?: TFN[]
 }) {
     return (
         <TabsContent value="sumcolumn">
@@ -24,9 +24,9 @@ export default function ColumnSumPairwise({ criteria, columnSum = [] }: {
                             {criteria.map((c, idx) => (
                                 <TableRow key={c.code}>
                                     <TableHead>{c.name}</TableHead>
-                                    <TableCell className="text-center">{columnSum[idx] ? columnSum[idx][0] : '-'}</TableCell>
-                                    <TableCell className="text-center">{columnSum[idx] ? columnSum[idx][1] : '-'}</TableCell>
-                                    <TableCell className="text-center">{columnSum[idx] ? columnSum[idx][2] : '-'}</TableCell>
+                                    <TableCell className="text-center">{geometricMean[idx] ? geometricMean[idx][0] : '-'}</TableCell>
+                                    <TableCell className="text-center">{geometricMean[idx] ? geometricMean[idx][1] : '-'}</TableCell>
+                                    <TableCell className="text-center">{geometricMean[idx] ? geometricMean[idx][2] : '-'}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

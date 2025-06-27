@@ -4,11 +4,10 @@ import Pairwise from "~/components/pairwise/pairwise";
 import NormalizedPairwise from "~/components/pairwise/normalized";
 import DefuzzifiedPairwise from "~/components/pairwise/defuzzificated";
 import Header from "~/components/Header";
-import { Sigma } from "lucide-react";
-import ColumnSumPairwise from "~/components/pairwise/column-sum";
+import GMean from "~/components/pairwise/geometric-mean";
 
 export default function Criterions() {
-    const { matrix, columnSum, syntheticExtent, defuzzified, criteria, pairwise } = useCriterions();
+    const { matrix, geometricMean, normalized, defuzzified, criteria, pairwise } = useCriterions();
     return (
         <>
             <Header endpoint="Kriteria" />
@@ -16,13 +15,13 @@ export default function Criterions() {
                 <Tabs defaultValue="pairwise">
                     <TabsList>
                         <TabsTrigger value="pairwise">Komparasi</TabsTrigger>
-                        {/* <TabsTrigger value="sumcolumn"><Sigma /> Kolom</TabsTrigger> */}
+                        <TabsTrigger value="sumcolumn">G. Mean</TabsTrigger>
                         <TabsTrigger value="normalized">Normalisasi</TabsTrigger>
                         <TabsTrigger value="defuzzyfied">Hasil</TabsTrigger>
                     </TabsList>
                     <Pairwise criteria={criteria} />
-                    {/* <ColumnSumPairwise criteria={criteria} columnSum={columnSum} /> */}
-                    <NormalizedPairwise criteria={criteria} syntheticExtent={syntheticExtent} />
+                    <GMean criteria={criteria} geometricMean={geometricMean} />
+                    <NormalizedPairwise criteria={criteria} syntheticExtent={normalized} />
                     <DefuzzifiedPairwise criteria={criteria} defuzzified={defuzzified} />
                 </Tabs>
             </div>

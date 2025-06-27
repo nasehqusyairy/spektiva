@@ -2,9 +2,9 @@ import React, { createContext, useContext, useState, useMemo, useEffect } from "
 import type { CriteriaItem, PairwiseInputItem, TFN } from "~/models/criteria";
 import {
     buildFullTFNMatrix,
-    calculateColumnSum,
-    calculateSyntheticExtent,
-    defuzzify
+    geometricMeanRow,
+    normalizeBuckley,
+    defuzzifyNormalize
 } from "~/lib/tfn-matrix";
 
 interface FuzzyContextValue {
@@ -13,8 +13,8 @@ interface FuzzyContextValue {
     setCriteria: (data: CriteriaItem[]) => void;
     setPairwise: (data: PairwiseInputItem[]) => void;
     matrix?: TFN[][];
-    columnSum?: TFN[];
-    syntheticExtent?: TFN[];
+    geometricMean?: TFN[];
+    normalized?: TFN[];
     defuzzified: { defuzz: number; weight: number }[];
 }
 
@@ -35,18 +35,18 @@ export const CriterionsProvider = ({ children, loaderData }: { children: React.R
         if (!criteria || !pairwise) {
             return {
                 matrix: undefined,
-                columnSum: undefined,
-                syntheticExtent: undefined,
+                geometricMean: undefined,
+                normalized: undefined,
                 defuzzified: [],
             };
         }
 
         const matrix = buildFullTFNMatrix(criteria, pairwise);
-        const columnSum = calculateColumnSum(matrix);
-        const syntheticExtent = calculateSyntheticExtent(matrix, columnSum);
-        const defuzzified = defuzzify(syntheticExtent);
+        const geometricMean = geometricMeanRow(matrix);
+        const normalized = normalizeBuckley(geometricMean);
+        const defuzzified = defuzzifyNormalize(normalized);
 
-        return { matrix, columnSum, syntheticExtent, defuzzified };
+        return { matrix, geometricMean, normalized, defuzzified };
     }, [criteria, pairwise]);
 
     return (
